@@ -13,6 +13,7 @@ public class BallMovement : MonoBehaviour
 
     protected Rigidbody rigi;
     protected Vector3 dashDir;
+    protected bool isDashing;
 
     void Start()
     {
@@ -20,22 +21,6 @@ public class BallMovement : MonoBehaviour
             rigi = GetComponent<Rigidbody>();
 
         dashDir = Vector3.ProjectOnPlane(playerCamera.transform.forward, Vector3.up);
-    }
-
-    void Update()
-    {
-        //Debug inputs
-        /*Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            Dash();
-        }*/
     }
 
     public void Move(float _x, float _y)
@@ -68,11 +53,26 @@ public class BallMovement : MonoBehaviour
     {
         rigi.velocity *= stats.dashVelMod;
         rigi.AddForce(Vector3.ProjectOnPlane(dashDir, Vector3.up)*stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
+        isDashing = true;
+        Invoke("EndDash", 0.7f);
     }
 
     public virtual void Special()
     {
 
+    }
+
+    void EndDash()
+    {
+        isDashing = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(isDashing)
+        {
+            collision.collider.gameObject.SendMessage("GetHit", SendMessageOptions.DontRequireReceiver);    
+        }
     }
 }
 

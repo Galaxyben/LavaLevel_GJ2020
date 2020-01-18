@@ -747,6 +747,8 @@ GameObject:
   - component: {fileID: 6669228834555949424}
   - component: {fileID: 6669228834555949427}
   - component: {fileID: 1147584347}
+  - component: {fileID: 1169444313}
+  - component: {fileID: 1169444312}
   m_Layer: 0
   m_Name: TestingBall
   m_TagString: Untagged
@@ -820,6 +822,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   movement: {fileID: 6669228834555949427}
+--- !u!135 &1169444313
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669228834555949437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1169444312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669228834555949437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db29a55c642fa3a4fbe92c873783dd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6669228834866311794
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +858,6 @@ GameObject:
   - component: {fileID: 6669228834866311795}
   - component: {fileID: 6669228834866311798}
   - component: {fileID: 6669228834866311793}
-  - component: {fileID: 6669228834866311792}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -899,16 +925,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &6669228834866311792
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6669228834866311794}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

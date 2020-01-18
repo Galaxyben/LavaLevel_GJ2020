@@ -10,10 +10,11 @@ public class BallScaler : MonoBehaviour
     {
         rigi = GetComponent<Rigidbody>();
     }
-
+     
     void GetHit()
     {
-        transform.localScale = transform.localScale + Vector3.one * 0.1f;
-        rigi.mass += 0.5f;
+        Debug.Log("Got hit");
+        transform.localScale = transform.localScale + Vector3.one * 0.4f;
+        rigi.mass += 0.4f;
     }
 }
