@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using Cinemachine;
 
 public class BallControler : MonoBehaviour
 {
     public int playerID;
     public BallMovement movement;
+    public CinemachineFreeLook cmFL;
+    public AxisState aStateX, aStateY;
     private Player player;
 
     Vector2 moveAxes, cameraAxes;
@@ -15,6 +18,7 @@ public class BallControler : MonoBehaviour
     void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
+        //aStateX = new AxisState()
     }
 
     void Update()
