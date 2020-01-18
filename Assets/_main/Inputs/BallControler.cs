@@ -51,7 +51,7 @@ public class BallControler : MonoBehaviour
     {
         movement.Move(moveAxes.x, moveAxes.y);
         axis1.m_InputAxisValue = cameraAxes.y;
-
+        axis1.Update(Time.deltaTime);
 
         if (jump)
             movement.Jump();
