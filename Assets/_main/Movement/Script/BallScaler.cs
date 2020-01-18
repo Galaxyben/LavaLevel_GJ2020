@@ -6,15 +6,19 @@ using UnityEngine;
 public class BallScaler : MonoBehaviour
 {
     Rigidbody rigi;
+
+    float totalDamage;
+    float maxDamage = 200;
+
     void Start()
     {
         rigi = GetComponent<Rigidbody>();
     }
      
-    void GetHit()
+    public void GetHit(float _dmg)
     {
-        Debug.Log("Got hit");
-        transform.localScale = transform.localScale + Vector3.one * 0.4f;
-        rigi.mass += 0.4f;
+        totalDamage += _dmg;
+        transform.localScale = transform.localScale + Vector3.one * 0.6f;
+        rigi.mass += 0.1f;
     }
 }
