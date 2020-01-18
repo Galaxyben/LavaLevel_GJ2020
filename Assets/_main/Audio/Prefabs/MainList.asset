@@ -12,5 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262cd411b5aa21149b90de93ce058e70, type: 3}
   m_Name: MainList
   m_EditorClassIdentifier: 
-  clips: []
-  groupSizes: 
+  clipGroup:
+  - clips:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - clips: []
+  - clips: []
+  - clips: []
+  - clips: []
+  - clips: []
+  - clips: []
+  - clips: []
