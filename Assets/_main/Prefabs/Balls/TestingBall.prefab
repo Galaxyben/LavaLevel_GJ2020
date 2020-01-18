@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6669228834555949426}
   - component: {fileID: 6669228834555949424}
   - component: {fileID: 6669228834555949427}
+  - component: {fileID: 1147584347}
   m_Layer: 0
   m_Name: TestingBall
   m_TagString: Untagged
@@ -69,7 +70,20 @@ MonoBehaviour:
     dashForce: 15
     dashVelMod: 1
     weightMod: 5
-  dd: {x: 0, y: 0, z: 0}
+--- !u!114 &1147584347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669228834555949437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d627c277e46192d469821d6020b99861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  movement: {fileID: 6669228834555949427}
 --- !u!1 &6669228834866311794
 GameObject:
   m_ObjectHideFlags: 0

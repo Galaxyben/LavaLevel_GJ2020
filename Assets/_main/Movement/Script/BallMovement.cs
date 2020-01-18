@@ -11,8 +11,8 @@ public class BallMovement : MonoBehaviour
     [Header("Settings")]
     public BallMovementStats stats;
 
-    private Rigidbody rigi;
-    private Vector3 dashDir;
+    protected Rigidbody rigi;
+    protected Vector3 dashDir;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         //Debug inputs
-        Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        /*Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -35,7 +35,7 @@ public class BallMovement : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Dash();
-        }
+        }*/
     }
 
     public void Move(float _x, float _y)
@@ -68,6 +68,11 @@ public class BallMovement : MonoBehaviour
     {
         rigi.velocity *= stats.dashVelMod;
         rigi.AddForce(Vector3.ProjectOnPlane(dashDir, Vector3.up)*stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
+    }
+
+    public virtual void Special()
+    {
+
     }
 }
 
