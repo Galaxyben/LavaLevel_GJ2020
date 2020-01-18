@@ -68,7 +68,7 @@ public class BallMovement : MonoBehaviour
 
     public void Dash()
     {
-        if (lastDashTime + stats.dashCooldown > Time.time || infiniteDash)
+        if (lastDashTime + stats.dashCooldown < Time.time || infiniteDash)
         {
             rigi.velocity *= stats.velConserveRatio;
             rigi.AddForce(Vector3.ProjectOnPlane(dashDir, isGrounded ? floorNormal : Vector3.up) * stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
@@ -130,6 +130,11 @@ public class BallMovement : MonoBehaviour
 
             floorNormal = collision.contacts[bestContact].normal;
         }
+    }
+
+    void GetPushed(Mangos.PushData pd)
+    {
+        rigi.AddForce(pd.direction * pd.force, ForceMode.Impulse);
     }
 
     private void OnCollisionExit(Collision collision)
