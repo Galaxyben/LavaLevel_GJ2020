@@ -17,6 +17,9 @@ TagManager:
   - PostProcessing
   - levelWalls
   - Indicator
+  - PostProcessing2
+  - PostProcessing3
+  - PostProcessing4
   -
   -
   -
@@ -34,10 +37,7 @@ TagManager:
   -
   -
   -
-  -
-  -
-  -
-  -
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
