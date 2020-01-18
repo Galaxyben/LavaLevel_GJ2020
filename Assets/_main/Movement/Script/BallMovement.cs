@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mangos;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class BallMovement : MonoBehaviour
 {
     [Header("Setup")]
     public Camera playerCamera;
+    public BallScaler scaler;
     [Header("Settings")]
     public BallMovementStats stats;
 
@@ -90,7 +92,8 @@ public class BallMovement : MonoBehaviour
         Debug.Log("Col enter");
         if(isDashing)
         {
-            collision.collider.gameObject.SendMessage("GetHit", SendMessageOptions.DontRequireReceiver);    
+            Vector3 point = collision.contactCount > 0 ? collision.contacts[0].point : transform.position;
+            collision.collider.gameObject.SendMessage("GetPushed", new PushData(point, rigi.velocity, stats.dashForce/12f) , SendMessageOptions.DontRequireReceiver);    
         }
 
         for (int i = 0; i < collision.contactCount; i++)
@@ -134,7 +137,8 @@ public class BallMovement : MonoBehaviour
 
     void GetPushed(Mangos.PushData pd)
     {
-        rigi.AddForce(pd.direction * pd.force, ForceMode.Impulse);
+        rigi.AddForceAtPosition(pd.direction * pd.force, pd.point, ForceMode.Impulse);
+        scaler.GetHit(Mathf.Floor(pd.force/10f));
     }
 
     private void OnCollisionExit(Collision collision)

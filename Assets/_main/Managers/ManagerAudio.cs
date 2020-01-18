@@ -34,7 +34,7 @@ namespace Mangos
 
         private void Start()
         {
-            PoolManager.PreSpawn(audioDad, clips.clips.Count * 15, true);
+            PoolManager.PreSpawn(audioDad, clips.clipGroup.Count * 15, true);
             PlaySoundGlobal(mainMenu, 0.6f);
         }
 
