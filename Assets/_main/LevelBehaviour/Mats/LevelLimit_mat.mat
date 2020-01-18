@@ -89,7 +89,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularPower: 0
+    - _SpecularPower: 1.19
     - _SpecularSize: 0
     - _SrcBlend: 1
     - _Steps: 2
