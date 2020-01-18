@@ -93,7 +93,7 @@ Material:
     - _SpecularSize: 0
     - _SrcBlend: 1
     - _Steps: 2
-    - _Transparency: 0
+    - _Transparency: 0.75
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

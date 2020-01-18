@@ -5,24 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AudioClipListVariable", menuName = "Audio Clip List")]
 public class AudioClipListVariable : ScriptableObject
 {
-    public List<AudioClip> clips = new List<AudioClip>();
-    public List<int> groupSizes = new List<int>();
+    public List<ClipGroup> clipGroup = new List<ClipGroup>();
 
     public AudioClip this[int _i]
     {
         get
         {
-            int reali = 0;
+            int rng = Random.Range(0, clipGroup[_i].clips.Length);
 
-            for(int j = 0; j < _i; j++)
-            {
-                reali += groupSizes[j];
-            }
-
-            int rng = Random.Range(0, groupSizes[_i]);
-
-            return clips[reali + rng];
+            return clipGroup[_i].clips[rng];
         }
         private set { }
     }
+}
+
+[System.Serializable]
+public struct ClipGroup
+{
+    public AudioClip[] clips;
 }
