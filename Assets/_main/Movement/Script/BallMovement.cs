@@ -13,6 +13,7 @@ public class BallMovement : MonoBehaviour
 
     [Header("Debug/Dev")]
     public bool infiniteJumps;
+    public bool infiniteDash;
     public Vector3 floorNormal;
 
     protected Rigidbody rigi;
@@ -20,8 +21,9 @@ public class BallMovement : MonoBehaviour
     protected bool isGrounded = false;
     protected bool canJump = true;
     protected bool isDashing = false;
+    protected float lastDashTime;
 
-    void Start()
+    protected virtual void Start()
     {
         if (!rigi)
             rigi = GetComponent<Rigidbody>();
@@ -29,6 +31,8 @@ public class BallMovement : MonoBehaviour
         dashDir = Vector3.ProjectOnPlane(playerCamera.transform.forward, Vector3.up);
 
         floorNormal = Vector3.up;
+
+        lastDashTime = -stats.dashCooldown;
     }
 
     public void Move(float _x, float _y)
@@ -64,25 +68,21 @@ public class BallMovement : MonoBehaviour
 
     public void Dash()
     {
-        rigi.velocity *= stats.velConserveRatio;
-        rigi.AddForce(Vector3.ProjectOnPlane(dashDir, isGrounded ? floorNormal : Vector3.up) *stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
-        isDashing = true;
-        Invoke("EndDash", 0.7f);
+        if (lastDashTime + stats.dashCooldown < Time.time || infiniteDash)
+        {
+            rigi.velocity *= stats.velConserveRatio;
+            rigi.AddForce(Vector3.ProjectOnPlane(dashDir, isGrounded ? floorNormal : Vector3.up) * stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
+            isDashing = true;
+            lastDashTime = Time.time;
+            Invoke("EndDash", 0.7f);
+        }
     }
 
-    public virtual void Special()
-    {
-
-    }
+    public virtual void Special(){}
 
     void EndDash()
     {
         isDashing = false;
-    }
-
-    void CheckFloor()
-    {
-        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -132,6 +132,11 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    void GetPushed(Mangos.PushData pd)
+    {
+        rigi.AddForce(pd.direction * pd.force, ForceMode.Impulse);
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         Debug.Log("Col exit");
@@ -160,4 +165,6 @@ public class BallMovementStats
     public float velConserveRatio;
     [Tooltip("Modificador de peso según el daño, puede que dos bolas tengan el mismo tamaño pero una pese mas que otra por esta variable (ahorita no hace nada)")]
     public float weightMod;
+    [Tooltip("Tiempo de espera para volver a usar el dash")]
+    public float dashCooldown;
 }

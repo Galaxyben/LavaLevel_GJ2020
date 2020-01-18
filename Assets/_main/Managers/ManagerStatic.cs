@@ -33,4 +33,18 @@ namespace Mangos
         public static ManagerGameState gameStateManager;
         public static ManagerUI uiManager;
 	}
+
+    public struct PushData
+    {
+        public Vector3 point;
+        public Vector3 direction;
+        public float force;
+
+        public PushData(Vector3 point, Vector3 direction, float force)
+        {
+            this.point = point;
+            this.direction = direction;
+            this.force = force;
+        }
+    }
 }
