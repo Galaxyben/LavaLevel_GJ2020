@@ -46,12 +46,13 @@ public class BallMovement : MonoBehaviour
 
     public void Jump()
     {
+        rigi.velocity *= stats.velConserveRatio;
         rigi.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
     }
 
     public void Dash()
     {
-        rigi.velocity *= stats.dashVelMod;
+        rigi.velocity *= stats.velConserveRatio;
         rigi.AddForce(Vector3.ProjectOnPlane(dashDir, Vector3.up)*stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
         isDashing = true;
         Invoke("EndDash", 0.7f);
@@ -79,10 +80,17 @@ public class BallMovement : MonoBehaviour
 [Serializable]
 public class BallMovementStats
 {
+    [Tooltip("Fuerza con la que se mueve")]
     public float moveForce;
+    [Tooltip("Fuerza con la que se frena al moverse al lado contrario")]
     public float breakForce;
+    [Tooltip("Fuerza con la que brinca")]
     public float jumpForce;
+    [Tooltip("Fuerza con la que dashea")]
     public float dashForce;
-    public float dashVelMod;
+    [Range(0, 1)]
+    [Tooltip("Ratio de velocidad que se conserva antes de hacer un brinco o dash")]
+    public float velConserveRatio;
+    [Tooltip("Modificador de peso según el daño, puede que dos bolas tengan el mismo tamaño pero una pese mas que otra por esta variable (ahorita no hace nada)")]
     public float weightMod;
 }
