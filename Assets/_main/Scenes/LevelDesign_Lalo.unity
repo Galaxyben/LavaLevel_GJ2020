@@ -468,41 +468,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 120353281}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &175035799
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Directional Light : Shadow Map Render Texture'
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  serializedVersion: 3
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthFormat: 0
-  m_ColorFormat: 52
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!114 &201729698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,11 +1089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 491305855, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.076023825
+      value: 0.07602383
       objectReference: {fileID: 0}
     - target: {fileID: 491305855, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.449171
+      value: 0.44917104
       objectReference: {fileID: 0}
     - target: {fileID: 491305855, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1357,6 +1322,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 640036176}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &657730758
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Directional Light : Shadow Map Render Texture'
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  serializedVersion: 3
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthFormat: 0
+  m_ColorFormat: 52
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &664740867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1535,7 +1535,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.7728729, g: 0.979535, b: 0.9811321, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   overrideColor: 0
   overridingColor: {r: 1, g: 1, b: 1, a: 1}
   useShadow: 1
-  shadowMapRenderTexture: {fileID: 175035799}
+  shadowMapRenderTexture: {fileID: 657730758}
   useCookie: 1
   cookieMapRenderTexture: {fileID: 0}
   enableOutOfPhaseColor: 0
@@ -2484,7 +2484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeShape:
-    shape: 3
+    shape: 0
     fading:
       falloffExponent: 3
       xPositiveCubeFade: 0.25
@@ -2498,7 +2498,7 @@ MonoBehaviour:
       widthCylinderFade: 0.5
       yNegativeCylinderFade: 0.25
       yPositiveCylinderFade: 0.25
-      distanceSphereFade: 0.23400003
+      distanceSphereFade: 0.958
   useAsLightProbesProxyVolume: 0
   lightProbesMultiplier: 1
   texture2DMask:
@@ -2558,7 +2558,7 @@ MonoBehaviour:
       contrast: 1
       saturateOutputValues: 0
   scatteringInjection:
-    enable: 0
+    enable: 1
     strength: 0.5
     useNoiseMask: 0
     useNoiseMaskLevels: 1
@@ -2652,8 +2652,8 @@ MonoBehaviour:
         saturateOutputValues: 0
     color: {r: 0.94938314, g: 0.9983695, b: 0.999999, a: 1}
   ambientInjection:
-    enable: 0
-    strength: 0
+    enable: 1
+    strength: -1
     useNoiseMask: 0
     useNoiseMaskLevels: 0
     noiseMaskLevelParameters:
