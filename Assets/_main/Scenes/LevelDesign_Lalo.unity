@@ -855,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 1375160732}
     - target: {fileID: 829642519, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.051278725
+      value: 0.05127872
       objectReference: {fileID: 0}
     - target: {fileID: 829642519, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.y
@@ -863,11 +863,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 829642519, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.23287666
+      value: 0.23287667
       objectReference: {fileID: 0}
     - target: {fileID: 829642519, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.20884228
+      value: 0.20884225
       objectReference: {fileID: 0}
     - target: {fileID: 829642519, guid: 9b04c990c8f580845bbda1cc07c51a56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1032,6 +1032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stats.velConserveRatio
       value: 0.245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669228834555949427, guid: 9b04c990c8f580845bbda1cc07c51a56,
+        type: 3}
+      propertyPath: infiniteJumps
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6669228834555949437, guid: 9b04c990c8f580845bbda1cc07c51a56,
         type: 3}

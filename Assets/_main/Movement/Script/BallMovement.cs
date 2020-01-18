@@ -56,8 +56,8 @@ public class BallMovement : MonoBehaviour
     {
         if (canJump || infiniteJumps)
         {
-            rigi.velocity *= stats.velConserveRatio;
-            rigi.AddForce(Vector3.up * stats.jumpForce, ForceMode.Impulse);
+            rigi.velocity = new Vector3(rigi.velocity.x, rigi.velocity.y * stats.velConserveRatio, rigi.velocity.z);
+            rigi.AddForce((isGrounded ? floorNormal : Vector3.up) * stats.jumpForce, ForceMode.Impulse);
             canJump = false;
         }
     }
