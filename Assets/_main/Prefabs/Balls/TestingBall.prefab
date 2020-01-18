@@ -410,6 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534329642}
   - component: {fileID: 1534329641}
+  - component: {fileID: 7613983002057892857}
   m_Layer: 0
   m_Name: CM FreeLook
   m_TagString: Untagged
@@ -535,6 +536,36 @@ MonoBehaviour:
   - {fileID: 829642518}
   - {fileID: 2119671587}
   - {fileID: 491305854}
+--- !u!114 &7613983002057892857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534329640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.51
+  m_DampingWhenOccluded: 0.55
+  m_OptimalTargetDistance: 0
 --- !u!1 &1976006460
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,8 +838,10 @@ MonoBehaviour:
     breakForce: 10
     jumpForce: 6.5
     dashForce: 10
-    dashVelMod: 0.5
+    velConserveRatio: 0
     weightMod: 5
+  infiniteJumps: 0
+  floorNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &1147584347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +856,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   movement: {fileID: 6669228834555949427}
+  freeLook: {fileID: 0}
+  velocidadDeRotacion: 30
+  axis1:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 0
+    m_AccelTime: 0
+    m_DecelTime: 0
+    m_InputAxisName: 
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: 0
+    m_MaxValue: 0
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 0
+      m_RecenteringTime: 0
+      m_LegacyHeadingDefinition: 0
+      m_LegacyVelocityFilterStrength: 0
+  axis2:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 0
+    m_AccelTime: 0
+    m_DecelTime: 0
+    m_InputAxisName: 
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: 0
+    m_MaxValue: 0
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 0
+      m_RecenteringTime: 0
+      m_LegacyHeadingDefinition: 0
+      m_LegacyVelocityFilterStrength: 0
 --- !u!135 &1169444313
 SphereCollider:
   m_ObjectHideFlags: 0
