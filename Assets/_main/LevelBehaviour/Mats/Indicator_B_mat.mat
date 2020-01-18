@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LevelLimit_mat
-  m_Shader: {fileID: 4800000, guid: 6db046c63170ddf4395f687b247373b6, type: 3}
+  m_Name: Indicator_B_mat
+  m_Shader: {fileID: 4800000, guid: 344b55038ac652b4ea5778391583bc24, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,15 +44,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 85fae710b4a5e84459ffdfdb5daab261, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: 71ebd2d3c93f81a42a6729f306869d97, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -85,7 +85,7 @@ Material:
     - _NormalPower: 0.5
     - _OcclusionStrength: 1
     - _OutlineGlow: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.02
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -93,14 +93,13 @@ Material:
     - _SpecularSize: 0
     - _SrcBlend: 1
     - _Steps: 2
-    - _Transparency: 0.75
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+    - _MainColor: {r: 0, g: 0.5827389, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

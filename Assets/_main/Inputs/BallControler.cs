@@ -18,6 +18,7 @@ public class BallControler : MonoBehaviour
     void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
+        //aStateX = new AxisState()
     }
 
     void Start()
@@ -50,6 +51,7 @@ public class BallControler : MonoBehaviour
     {
         movement.Move(moveAxes.x, moveAxes.y);
         axis1.m_InputAxisValue = cameraAxes.y;
+
 
         if (jump)
             movement.Jump();
