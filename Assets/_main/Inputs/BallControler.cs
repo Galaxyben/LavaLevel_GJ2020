@@ -37,6 +37,7 @@ public class BallControler : MonoBehaviour
     private void ProcessInput()
     {
         movement.Move(moveAxes.x, moveAxes.y);
+        Debug.Log(cameraAxes);
 
         if (jump)
             movement.Jump();
