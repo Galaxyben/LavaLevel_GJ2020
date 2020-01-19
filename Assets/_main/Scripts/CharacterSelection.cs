@@ -15,6 +15,7 @@ public class CharacterSelection : MonoBehaviour
     }
 
     Player player;
+    public CharacterSelectorController csc;
     public State state;
     public int playerID;
 
@@ -34,9 +35,14 @@ public class CharacterSelection : MonoBehaviour
         state = State.MAIN_MENU;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         GetInput();
+    }
+
+    void Update()
+    {
+       // GetInput();
         ProcessInput();
     }
 
@@ -63,22 +69,28 @@ public class CharacterSelection : MonoBehaviour
             }
             if (pressedA)
             {
-
+                state = State.CHARACTER_SELECTION;
             }
         }
         else if( state == State.CHARACTER_SELECTION)
         {
             if (right)
             {
-
+                csc.NextCharacter();
             }
             if (left)
             {
-
+                csc.LastCharacter();
             }
             if (pressedA)
             {
+                csc.playerID = playerID;
+                csc.SelectCharacter();
 
+                player.controllers.maps.SetMapsEnabled(false, "UI");
+                player.controllers.maps.SetMapsEnabled(true, "Default");
+
+                state = State.SELECTED;
             }
         }
     }
