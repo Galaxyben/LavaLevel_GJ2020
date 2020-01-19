@@ -6,21 +6,16 @@ namespace Mangos
 {
     public enum Sounds : int
     {
-        STEP_DIRT,
-        STEP_WHEAT,
-        STEP_GRASS,
-        COW_ANGRY,
-        COW_BREATH,
-        SCARED_BREATHING,
-        KEYS,
-        ENGINE_FAIL,
-        HEAVY_BREATHING
+        GAMEPLAY,
+        SFXATTACK,
+        SFXHIT,
+        SFXSPECIAL
     }
 
     public class ManagerAudio : MonoBehaviour
     {
         public GameObject audioDad;
-        public Camera cam;
+        public Transform audioListener;
         public AudioClip mainMenu;
 
         public AudioClipListVariable clips;
@@ -34,8 +29,11 @@ namespace Mangos
 
         private void Start()
         {
+            StopMusic();
             PoolManager.PreSpawn(audioDad, clips.clipGroup.Count * 15, true);
-            PlaySoundGlobal(mainMenu, 0.6f);
+            if(mainMenu)
+                PlaySoundGlobal(mainMenu, 0.6f);
+            PlayMusic(Sounds.GAMEPLAY);
         }
 
         public void PlaySoundAt(Vector3 pos, AudioClip clip)
@@ -54,7 +52,7 @@ namespace Mangos
 
         public void PlaySoundGlobal(AudioClip clip, float volume = 1f)
         {
-            Transform sound = PoolManager.SpawnWithClip(audioDad, cam.transform.position, Quaternion.identity, clip, cam.transform);
+            Transform sound = PoolManager.SpawnWithClip(audioDad, audioListener.transform.position, Quaternion.identity, clip, audioListener.transform);
             AudioSource temp = sound.GetComponent<AudioSource>();
             temp.volume = volume;
             temp.Play();
@@ -62,7 +60,7 @@ namespace Mangos
 
         public void PlaySoundGlobal(Sounds clip)
         {
-            Transform sound = PoolManager.SpawnWithClip(audioDad, cam.transform.position, Quaternion.identity, clips[(int)clip], cam.transform);
+            Transform sound = PoolManager.SpawnWithClip(audioDad, audioListener.transform.position, Quaternion.identity, clips[(int)clip], audioListener.transform);
             AudioSource temp = sound.GetComponent<AudioSource>();
             temp.Play();
         }
@@ -71,7 +69,7 @@ namespace Mangos
         {
             if (jukebox == null)
             {
-                jukebox = PoolManager.SpawnWithClip(audioDad, cam.transform.position, Quaternion.identity, clip, cam.transform).GetComponent<AudioSource>();
+                jukebox = PoolManager.SpawnWithClip(audioDad, audioListener.transform.position, Quaternion.identity, clip, audioListener.transform).GetComponent<AudioSource>();
                 jukebox.gameObject.name = "jukebox";
                 jukebox.loop = true;
                 jukebox.Play();
@@ -87,7 +85,7 @@ namespace Mangos
         {
             if (jukebox == null)
             {
-                jukebox = PoolManager.SpawnWithClip(audioDad, cam.transform.position, Quaternion.identity, clips[(int)clip], cam.transform).GetComponent<AudioSource>();
+                jukebox = PoolManager.SpawnWithClip(audioDad, audioListener.transform.position, Quaternion.identity, clips[(int)clip], audioListener.transform).GetComponent<AudioSource>();
                 jukebox.gameObject.name = "jukebox";
                 jukebox.loop = true;
                 jukebox.Play();

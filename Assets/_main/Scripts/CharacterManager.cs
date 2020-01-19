@@ -27,6 +27,8 @@ public class CharacterManager : MonoBehaviour
 {
     public List<GameObject> characterPrefab = new List<GameObject>();
     public List<CharacterSelectionData> selectedCharacters = new List<CharacterSelectionData>();
+    public int selectedLevel;
+    public LayerMask[] cameraMasks = new LayerMask[4];
 
     public static CharacterManager instance;
 
@@ -37,7 +39,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("Manager start");
     }
     
     void Update()
@@ -56,6 +58,7 @@ public class CharacterManager : MonoBehaviour
         if (selectedCharacters.Count >= 4)
         {
             int level = Random.Range(2, 5);
+            selectedLevel = level-2;
             SceneManager.LoadScene(level);
         }
     }

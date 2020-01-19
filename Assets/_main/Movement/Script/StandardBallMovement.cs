@@ -7,6 +7,7 @@ public class StandardBallMovement : BallMovement
 {
     public Collider trigger;
     public float bumperForce;
+    public ParticleSystem ring_ptr;
 
     private float upTime = 0.1f;
     private float cooldown = 1.0f;
@@ -27,6 +28,8 @@ public class StandardBallMovement : BallMovement
             lastUse = Time.time;
             trigger.enabled = true;
             rend.enabled = true;
+            ring_ptr.Play();
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXSPECIAL);
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mangos;
 
 public class HeavyBallMovement : BallMovement
 {
@@ -10,6 +11,7 @@ public class HeavyBallMovement : BallMovement
 
     public override void Special()
     {
+        ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXSPECIAL);
         if (hammerOn)
             PullHammer();
         else

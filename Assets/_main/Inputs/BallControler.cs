@@ -18,12 +18,12 @@ public class BallControler : MonoBehaviour
 
     void Awake()
     {
-        player = ReInput.players.GetPlayer(playerID);
         //aStateX = new AxisState()
     }
 
     void Start()
     {
+        player = ReInput.players.GetPlayer(playerID);
         axis1 = freeLook.m_YAxis;
         axis2 = freeLook.m_XAxis;
     }
