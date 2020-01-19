@@ -8,6 +8,7 @@ public class BallScaler : MonoBehaviour
     Rigidbody rigi;
 
     float totalDamage;
+    float maxDamage = 200;
 
     void Start()
     {
@@ -16,7 +17,8 @@ public class BallScaler : MonoBehaviour
      
     public void GetHit(float _dmg)
     {
-        transform.localScale = transform.localScale + Vector3.one * 0.4f;
-        rigi.mass += 0.4f;
+        totalDamage += _dmg;
+        transform.localScale = transform.localScale + Vector3.one * 0.6f;
+        rigi.mass += 0.1f;
     }
 }
