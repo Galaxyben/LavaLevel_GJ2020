@@ -26,6 +26,8 @@ public class FinishedTutorial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject canvas = GameObject.Find("MasterCanvas");
+        Destroy(canvas);
         SceneManager.LoadScene(0);
     }
 }
