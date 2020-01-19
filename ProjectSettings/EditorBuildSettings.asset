@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_main/Scenes/Level_SquareChains.unity
     guid: 395c450e9735a90499e31a80ef4eaac6
+  - enabled: 1
+    path: Assets/_main/Scenes/LevelDesign_LEO-1.unity
+    guid: adc0ae9871318c24781518b56d1b1061
   m_configObjects: {}

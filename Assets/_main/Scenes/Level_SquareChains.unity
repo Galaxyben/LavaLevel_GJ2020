@@ -2919,7 +2919,7 @@ PrefabInstance:
     - target: {fileID: 348766820139452380, guid: cbc975a28ec1acf419c917997d5d041f,
         type: 3}
       propertyPath: mockupSpawns
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 348766820139452381, guid: cbc975a28ec1acf419c917997d5d041f,
         type: 3}
