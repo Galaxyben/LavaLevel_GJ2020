@@ -13,6 +13,13 @@ public class BallMovement : MonoBehaviour
     [Header("Settings")]
     public BallMovementStats stats;
 
+    [Header("Visuals")]
+    public GameObject canvas;
+    public ParticleSystem[] damaged_prt;
+    public ParticleSystem dash_ptr;
+    public ParticleSystem land_ptr;
+    public ParticleSystem ripple_ptr;
+
     [Header("Debug/Dev")]
     public bool infiniteJumps;
     public bool infiniteDash;
@@ -88,6 +95,7 @@ public class BallMovement : MonoBehaviour
             rigi.AddForce(Vector3.ProjectOnPlane(dashDir, isGrounded ? floorNormal : Vector3.up) * stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
             isDashing = true;
             lastDashTime = Time.time;
+            dash_ptr.Play();
             Invoke("EndDash", 0.7f);
         }
     }
@@ -117,18 +125,31 @@ public class BallMovement : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    public void SetDamaged(bool _bool)
+    {
+        for (int i = 0; i < damaged_prt.Length; i++)
+        {
+            if (_bool) damaged_prt[i].Play();
+            else damaged_prt[i].Stop();
+        } 
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(isDashing)
         {
             Vector3 point = collision.contactCount > 0 ? collision.contacts[0].point : transform.position;
-            collision.collider.gameObject.SendMessage("GetPushed", new PushData(point, rigi.velocity, stats.dashForce/12f) , SendMessageOptions.DontRequireReceiver);    
+            collision.collider.gameObject.SendMessage("GetPushed", new PushData(point, rigi.velocity, stats.dashForce/12f) , SendMessageOptions.DontRequireReceiver);
+            Instantiate(ripple_ptr, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
         }
 
         for (int i = 0; i < collision.contactCount; i++)
         {
             if (Vector3.Dot(Vector3.up, collision.contacts[i].normal) > 0.25f) //Si estoy tocando algo no muy inclinado
+            { 
                 isGrounded = canJump = true;
+                land_ptr.Play();
+            }
         }
     }
 

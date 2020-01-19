@@ -15,6 +15,15 @@ public class Boundary : MonoBehaviour
     public GameObject winCanvas;
     public GameObject loseCanvas;
     private int deaths = 0;
+    private bool[] deadState = new bool[4];
+
+    private void Start()
+    {
+        for (int i = 0; i < deadState.Length; i++)
+        {
+            deadState[i] = false;
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -30,14 +39,28 @@ public class Boundary : MonoBehaviour
                 if (lives[controler.playerID] < totalLives)
                 {
                     StartCoroutine("Respawn", controler.movement);
+                    if (lives[controler.playerID] < 2)
+                    {
+                        controler.movement.SetDamaged(true);
+                    } else
+                    {
+                        controler.movement.SetDamaged(false);
+                    }
                 }
                 else
                 {
-
+                    Instantiate(loseCanvas, controler.movement.canvas.transform);
+                    deadState[controler.playerID] = true;
                     deaths++;
                     if (deaths >= 3)
                     {
-                        ManagerStatic.sceneManager.LoadScene("MainMenu", false);
+                        Debug.Log("End Game");
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (!deadState[i])
+                                Instantiate(winCanvas, controler.movement.canvas.transform);
+                        }
+                        StartCoroutine(ReturnToMenu());
                     }
                 }
             }
@@ -48,5 +71,12 @@ public class Boundary : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTime);
         mov.Spawn(spawnPoints[(++lastSpawn)%4].position);
+    }
+
+    IEnumerator ReturnToMenu()
+    {
+        Debug.Log("Returning To Menu");
+        yield return new WaitForSeconds(5.0f);
+        ManagerStatic.sceneManager.LoadScene("MainMenu", false);
     }
 }
