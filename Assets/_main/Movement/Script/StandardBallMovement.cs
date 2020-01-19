@@ -17,7 +17,6 @@ public class StandardBallMovement : BallMovement
     protected override void Start()
     {
         base.Start();
-
         trigger.enabled = false;
     }
 

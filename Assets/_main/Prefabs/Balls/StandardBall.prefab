@@ -350,7 +350,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467911238116202169}
-  m_LocalRotation: {x: 0.14388946, y: -0.13328889, z: 0.019562686, w: 0.9803812}
+  m_LocalRotation: {x: 0.14388943, y: -0.13328888, z: 0.01956268, w: 0.9803812}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 600
+    m_MaxSpeed: 1000
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: 
@@ -896,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   scaler: {fileID: 0}
+  increaseSize: 0
   stats:
     moveForce: 10
     breakForce: 20

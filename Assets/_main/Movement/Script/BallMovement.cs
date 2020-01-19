@@ -10,6 +10,8 @@ public class BallMovement : MonoBehaviour
     [Header("Setup")]
     public Camera playerCamera;
     public BallScaler scaler;
+    public bool increaseSize;
+
     [Header("Settings")]
     public BallMovementStats stats;
 
@@ -42,10 +44,13 @@ public class BallMovement : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(Time.time > lastAutoGrowTime + autoGrowCooldown)
+        if(increaseSize)
         {
-            lastAutoGrowTime = Time.time;
-            GetPushed(new PushData(transform.position, Vector3.zero, 0));
+            if (Time.time > lastAutoGrowTime + autoGrowCooldown)
+            {
+                lastAutoGrowTime = Time.time;
+                GetPushed(new PushData(transform.position, Vector3.zero, 0));
+            }
         }
     }
 
