@@ -1506,8 +1506,8 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
+  - {fileID: 1325303456}
   - {fileID: 1712704484}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2532,9 +2532,10 @@ GameObject:
   - component: {fileID: 643364726}
   - component: {fileID: 643364725}
   - component: {fileID: 643364730}
+  - component: {fileID: 643364731}
   m_Layer: 0
   m_Name: MasterCanvas
-  m_TagString: Untagged
+  m_TagString: MasterCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2655,6 +2656,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enterUI: 1
   maxPlayers: 4
+--- !u!114 &643364731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643364724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea346d3a2965b2d4a855ae9995552363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &688589862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,7 +5976,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 615426414}
 --- !u!114 &905308339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9253,7 +9265,18 @@ MonoBehaviour:
         CustomSortingLayer: Default
       Event:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1714306359}
+            m_MethodName: Input_SwitchToPlay
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       GameEvents: []
       SoundData:
         SoundSource: 0
@@ -10666,7 +10689,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 0}
 --- !u!114 &1313037313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13259,7 +13281,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1748055663}
 --- !u!114 &1355877646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17874,7 +17895,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 0}
 --- !u!114 &1625979328
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -55,7 +55,7 @@ public class BallControler : MonoBehaviour
     {
         movement.Move(moveAxes.x, moveAxes.y);
         axis1.m_InputAxisValue = cameraAxes.y;
-        axis2.Value = Quaternion.Lerp(Quaternion.Euler(0, axis2.Value, 0), Quaternion.Euler(0, cameraAxes.x, 0), velocidadDeRotacion * Time.deltaTime).eulerAngles.y;
+        axis2.Value = Quaternion.Lerp(Quaternion.Euler(0, axis2.Value, 0), Quaternion.Euler(0, cameraAxes.x * 2, 0), velocidadDeRotacion * Time.deltaTime).eulerAngles.y;
         axis1.Update(Time.deltaTime);
 
 

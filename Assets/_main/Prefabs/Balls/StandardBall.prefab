@@ -496,7 +496,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 600
+    m_MaxSpeed: 1000
     m_AccelTime: 0.05
     m_DecelTime: 0.05
     m_InputAxisName: 
@@ -900,7 +900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  scaler: {fileID: 467911238321654900}
+  scaler: {fileID: 0}
+  increaseSize: 0
   stats:
     moveForce: 10
     breakForce: 20
