@@ -101,7 +101,7 @@ Material:
     - _SpecularPower: 0
     - _SpecularSize: 0
     - _SrcBlend: 1
-    - _Steps: 10
+    - _Steps: 2
     - _Transparency: 0
     - _UVSec: 0
     - _UseNormal: 0
