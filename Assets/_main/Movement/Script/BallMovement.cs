@@ -25,6 +25,9 @@ public class BallMovement : MonoBehaviour
     protected bool isDashing = false;
     protected float lastDashTime;
 
+    private float autoGrowCooldown = 10f;
+    private float lastAutoGrowTime = 0f;
+
     protected virtual void Start()
     {
         if (!rigi)
@@ -35,6 +38,15 @@ public class BallMovement : MonoBehaviour
         floorNormal = Vector3.up;
 
         lastDashTime = -stats.dashCooldown;
+    }
+
+    protected virtual void Update()
+    {
+        if(Time.time > lastAutoGrowTime + autoGrowCooldown)
+        {
+            lastAutoGrowTime = Time.time;
+            GetPushed(new PushData(transform.position, Vector3.zero, 0));
+        }
     }
 
     public void Move(float _x, float _y)
@@ -89,6 +101,22 @@ public class BallMovement : MonoBehaviour
         isDashing = false;
     }
 
+    public void Despawn()
+    {
+        rigi.velocity = Vector3.zero;
+        rigi.isKinematic = true;
+        gameObject.SetActive(false);
+    }
+
+    public void Spawn(Vector3 pos)
+    {
+        Debug.Log("Spawning");
+        rigi.isKinematic = false;
+        transform.position = pos;
+        transform.rotation = Quaternion.identity;
+        gameObject.SetActive(true);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(isDashing)
@@ -102,22 +130,6 @@ public class BallMovement : MonoBehaviour
             if (Vector3.Dot(Vector3.up, collision.contacts[i].normal) > 0.25f) //Si estoy tocando algo no muy inclinado
                 isGrounded = canJump = true;
         }
-    }
-
-    public void Despawn()
-    { 
-        rigi.velocity = Vector3.zero;
-        rigi.isKinematic = true;
-        gameObject.SetActive(false);
-    }
-
-    public void Spawn(Vector3 pos)
-    {
-        Debug.Log("Spawning");
-        rigi.isKinematic = false;
-        transform.position = pos;
-        transform.rotation = Quaternion.identity;
-        gameObject.SetActive(true);
     }
 
     private void OnCollisionStay(Collision collision)
