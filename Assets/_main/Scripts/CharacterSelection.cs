@@ -55,8 +55,17 @@ public class CharacterSelection : MonoBehaviour
         pressedA = player.GetButtonDown("Select");
     }
 
+    public void ForcedChangeState()
+    {
+        state = State.CHARACTER_SELECTION;
+    }
+
     private void ProcessInput()
     {
+        if (pressedA)
+        {
+            Debug.Log("Wasamamaya");
+        }
         if (state == State.MAIN_MENU)
         {
             if (up)
