@@ -39,7 +39,15 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         Debug.Log("Manager start");
+        if(instance)
+        {
+            if(instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
     
     void Update()
@@ -59,6 +67,11 @@ public class CharacterManager : MonoBehaviour
         {
             int level = Random.Range(2, 5);
             selectedLevel = level-2;
+            GameObject canvas = GameObject.Find("MasterCanvas");
+            if(canvas != null)
+            {
+                canvas.SetActive(false);
+            }
             SceneManager.LoadScene(level);
         }
     }

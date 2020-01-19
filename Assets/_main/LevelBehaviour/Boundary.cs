@@ -75,8 +75,14 @@ public class Boundary : MonoBehaviour
 
     IEnumerator ReturnToMenu()
     {
+        GameObject canvas = GameObject.Find("MasterCanvas");
+        if (canvas != null)
+        {
+            Debug.Log("Se destruye el canvas");
+            Destroy(canvas);
+        }
         Debug.Log("Returning To Menu");
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(3.0f);
         ManagerStatic.sceneManager.LoadScene("MainMenu", false);
     }
 }

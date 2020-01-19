@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterSelectorController : MonoBehaviour
 {
     public GameObject[] characters;
+    public GameObject readyImage;
     public int current;
     public int playerID;
     public bool ready;
@@ -56,6 +57,7 @@ public class CharacterSelectorController : MonoBehaviour
     {
         if(!ready)
         {
+            readyImage.SetActive(true);
             CharacterManager.instance.AddCharacter(current, playerID);
             ready = true;
         }
