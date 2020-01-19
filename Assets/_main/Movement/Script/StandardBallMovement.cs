@@ -29,6 +29,7 @@ public class StandardBallMovement : BallMovement
             trigger.enabled = true;
             rend.enabled = true;
             ring_ptr.Play();
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXSPECIAL);
         }
     }
 

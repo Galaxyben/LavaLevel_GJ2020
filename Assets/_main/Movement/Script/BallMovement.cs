@@ -102,6 +102,7 @@ public class BallMovement : MonoBehaviour
             lastDashTime = Time.time;
             GameObject prt = Instantiate(dash_ptr, transform.position, transform.rotation).gameObject;
             Destroy(prt, 2.0f);
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXATTACK);
             Invoke("EndDash", 0.7f);
         }
     }
@@ -137,7 +138,7 @@ public class BallMovement : MonoBehaviour
         {
             if (_bool) damaged_prt[i].Play();
             else damaged_prt[i].Stop();
-        } 
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -147,12 +148,13 @@ public class BallMovement : MonoBehaviour
             Vector3 point = collision.contactCount > 0 ? collision.contacts[0].point : transform.position;
             collision.collider.gameObject.SendMessage("GetPushed", new PushData(point, rigi.velocity, stats.dashForce/12f) , SendMessageOptions.DontRequireReceiver);
             Instantiate(ripple_ptr, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXHIT);
         }
 
         for (int i = 0; i < collision.contactCount; i++)
         {
             if (Vector3.Dot(Vector3.up, collision.contacts[i].normal) > 0.25f) //Si estoy tocando algo no muy inclinado
-            { 
+            {
                 isGrounded = canJump = true;
                 GameObject prt = Instantiate(land_ptr, transform.position, Quaternion.identity).gameObject;
             }
