@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mangos;
 
 public class Boundary : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class Boundary : MonoBehaviour
     public int lastSpawn = 0;
     public int[] lives = new int[] { 0 };
     public int totalLives = 3;
+
+    [Header("UI")]
+    public GameObject winCanvas;
+    public GameObject loseCanvas;
+    private int deaths = 0;
 
     private void OnTriggerExit(Collider other)
     {
@@ -27,7 +33,12 @@ public class Boundary : MonoBehaviour
                 }
                 else
                 {
-                    //That dude is dead
+
+                    deaths++;
+                    if (deaths >= 3)
+                    {
+                        ManagerStatic.sceneManager.LoadScene("MainMenu", false);
+                    }
                 }
             }
         }
