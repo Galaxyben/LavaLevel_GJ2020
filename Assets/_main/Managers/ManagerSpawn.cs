@@ -37,6 +37,9 @@ public class ManagerSpawn : MonoBehaviour
         }
         else if (mockupSpawns)
         {
+            var temp = GetComponent<PessStartToJoin>();
+            if (temp) temp.enabled = true;
+
             List<CharacterSelectionData> d = new List<CharacterSelectionData>();
             d.Add(new CharacterSelectionData(0, 0));
             d.Add(new CharacterSelectionData(1, 1));
