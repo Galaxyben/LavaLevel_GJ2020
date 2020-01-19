@@ -8,7 +8,9 @@ public class StandardBallMovement : BallMovement
     public Collider trigger;
     public float bumperForce;
 
-    private List<Vector3> directions = new List<Vector3>();
+    private float upTime = 0.1f;
+    private float cooldown = 1.0f;
+    private float lastUse = -1.0f;
 
     [Header("Debug")]
     public Renderer rend;
@@ -21,24 +23,24 @@ public class StandardBallMovement : BallMovement
 
     public override void Special()
     {
-        trigger.enabled = true;
-        rend.material.color = Color.red;
+        if (Time.time > lastUse + cooldown)
+        {
+            lastUse = Time.time;
+            trigger.enabled = true;
+            rend.enabled = true;
+        }
     }
 
-    private void Update()
+    protected override void Update()
     {
-        if(trigger.enabled && directions.Count > 0)
-        {
-            for(int i = 0; i < directions.Count; i++)
-            {
-                Debug.Log("Special adding force in direction " + directions[i]);
-                rigi.AddForce(directions[i] * (bumperForce/directions.Count), ForceMode.Impulse);
-            }
-        }
+        base.Update();
 
-        directions.Clear();
-        trigger.enabled = false;
-        rend.material.color = Color.white;
+        if(Time.time > lastUse + upTime)
+        {
+            rend.enabled = false;
+            trigger.enabled = false;
+            rend.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +51,6 @@ public class StandardBallMovement : BallMovement
             Debug.Log("Special trigger enter");
             Vector3 point = other.ClosestPoint(transform.position);
             Vector3 dir = (transform.position - point).normalized;
-            directions.Add(dir);
             other.gameObject.SendMessage("GetPushed", new PushData(point, -dir, bumperForce), SendMessageOptions.DontRequireReceiver);
         }
     }

@@ -8,7 +8,7 @@ using System;
 [AddComponentMenu("")]
 public class PessStartToJoin : MonoBehaviour
 {
-    // Static
+    public bool enterUI;
 
     private static PessStartToJoin instance;
     
@@ -67,7 +67,10 @@ public class PessStartToJoin : MonoBehaviour
         rewiredPlayer.controllers.maps.SetMapsEnabled(false, "Assignment");
 
         // Enable UI control for this Player now that he has joined
-        rewiredPlayer.controllers.maps.SetMapsEnabled(true, "UI");
+        if (enterUI)
+            rewiredPlayer.controllers.maps.SetMapsEnabled(true, "UI");
+        else
+            rewiredPlayer.controllers.maps.SetMapsEnabled(true, "Default");
 
         Debug.Log("Added Rewired Player id " + rewiredPlayerId + " to game player " + gamePlayerId);
 

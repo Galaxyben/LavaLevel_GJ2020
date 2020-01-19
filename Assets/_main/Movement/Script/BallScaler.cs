@@ -9,6 +9,8 @@ public class BallScaler : MonoBehaviour
 
     float totalDamage;
     float maxDamage = 200;
+    float maxScale = 5;
+    float maxMass = 3;
 
     void Start()
     {
@@ -18,7 +20,8 @@ public class BallScaler : MonoBehaviour
     public void GetHit(float _dmg)
     {
         totalDamage += _dmg;
-        transform.localScale = transform.localScale + Vector3.one * 0.6f;
-        rigi.mass += 0.1f;
+        totalDamage = Mathf.Min(maxDamage, totalDamage);
+        transform.localScale = Vector3.ClampMagnitude(transform.localScale + Vector3.one * 0.6f, 8);
+        rigi.mass = Mathf.Min(maxMass, rigi.mass + 0.1f); ///Calar el crecimiento por tiempo
     }
 }
