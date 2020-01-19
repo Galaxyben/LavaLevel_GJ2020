@@ -101,6 +101,7 @@ public class BallMovement : MonoBehaviour
             isDashing = true;
             lastDashTime = Time.time;
             dash_ptr.Play();
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXATTACK);
             Invoke("EndDash", 0.7f);
         }
     }
@@ -146,6 +147,7 @@ public class BallMovement : MonoBehaviour
             Vector3 point = collision.contactCount > 0 ? collision.contacts[0].point : transform.position;
             collision.collider.gameObject.SendMessage("GetPushed", new PushData(point, rigi.velocity, stats.dashForce/12f) , SendMessageOptions.DontRequireReceiver);
             Instantiate(ripple_ptr, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+            ManagerStatic.audioManager.PlaySoundAt(transform.position, Sounds.SFXHIT);
         }
 
         for (int i = 0; i < collision.contactCount; i++)

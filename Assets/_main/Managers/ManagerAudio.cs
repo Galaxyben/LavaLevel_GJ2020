@@ -6,22 +6,16 @@ namespace Mangos
 {
     public enum Sounds : int
     {
-        STEP_DIRT,
-        STEP_WHEAT,
-        STEP_GRASS,
-        COW_ANGRY,
-        COW_BREATH,
-        SCARED_BREATHING,
-        KEYS,
-        ENGINE_FAIL,
-        HEAVY_BREATHING
+        GAMEPLAY,
+        SFXATTACK,
+        SFXHIT,
+        SFXSPECIAL
     }
 
     public class ManagerAudio : MonoBehaviour
     {
         public GameObject audioDad;
         public Camera cam;
-        public AudioClip mainMenu;
 
         public AudioClipListVariable clips;
 
@@ -34,8 +28,9 @@ namespace Mangos
 
         private void Start()
         {
+            StopMusic();
             PoolManager.PreSpawn(audioDad, clips.clipGroup.Count * 15, true);
-            PlaySoundGlobal(mainMenu, 0.6f);
+            PlayMusic(Sounds.GAMEPLAY);
         }
 
         public void PlaySoundAt(Vector3 pos, AudioClip clip)
