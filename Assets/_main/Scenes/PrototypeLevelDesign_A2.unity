@@ -548,17 +548,17 @@ PrefabInstance:
     - target: {fileID: 3904153562675740666, guid: b676248adaae10b40a8280e87a5c66a0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14472322
+      value: 0.1447232
       objectReference: {fileID: 0}
     - target: {fileID: 3904153562675740666, guid: b676248adaae10b40a8280e87a5c66a0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.08120199
+      value: -0.08120198
       objectReference: {fileID: 0}
     - target: {fileID: 3904153562675740666, guid: b676248adaae10b40a8280e87a5c66a0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011918167
+      value: 0.011918164
       objectReference: {fileID: 0}
     - target: {fileID: 3904153562675740666, guid: b676248adaae10b40a8280e87a5c66a0,
         type: 3}
@@ -1787,7 +1787,7 @@ PrefabInstance:
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011168174
+      value: -0.011168177
       objectReference: {fileID: 0}
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
@@ -1797,7 +1797,7 @@ PrefabInstance:
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00758606
+      value: 0.007586062
       objectReference: {fileID: 0}
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
@@ -1847,7 +1847,7 @@ PrefabInstance:
     - target: {fileID: 467911238116202171, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.08158868
+      value: 0.08158867
       objectReference: {fileID: 0}
     - target: {fileID: 467911238116202171, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
@@ -6085,7 +6085,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 6
+  m_AngularDrag: 8
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -16204,7 +16204,7 @@ PrefabInstance:
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00650094
+      value: 0.006500941
       objectReference: {fileID: 0}
     - target: {fileID: 467911237379799763, guid: 563213f20b81bc84889b7b2aded9efa5,
         type: 3}
