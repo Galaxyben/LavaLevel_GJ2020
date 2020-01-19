@@ -192,6 +192,9 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 2
         _layoutId: 0
+      - _enabled: 0
+        _categoryId: 0
+        _layoutId: 0
       _defaultMouseMaps:
       - _enabled: 1
         _categoryId: 0
@@ -217,8 +220,11 @@ MonoBehaviour:
       _descriptiveName: Player1
       _startPlaying: 1
       _defaultJoystickMaps:
-      - _enabled: 1
+      - _enabled: 0
         _categoryId: 0
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 2
         _layoutId: 0
       _defaultMouseMaps:
       - _enabled: 1
@@ -245,8 +251,11 @@ MonoBehaviour:
       _descriptiveName: Player2
       _startPlaying: 1
       _defaultJoystickMaps:
-      - _enabled: 1
+      - _enabled: 0
         _categoryId: 0
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 2
         _layoutId: 0
       _defaultMouseMaps:
       - _enabled: 1
@@ -273,8 +282,11 @@ MonoBehaviour:
       _descriptiveName: Player3
       _startPlaying: 1
       _defaultJoystickMaps:
-      - _enabled: 1
+      - _enabled: 0
         _categoryId: 0
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 2
         _layoutId: 0
       _defaultMouseMaps:
       - _enabled: 1
@@ -408,13 +420,6 @@ MonoBehaviour:
       _descriptiveName: Default
       _tag: 
       _id: 0
-      _userAssignable: 1
-      _checkConflictsWithAllCategories: 1
-      _checkConflictsCategoryIds: 
-    - _name: UI
-      _descriptiveName: UI_MAP
-      _tag: 
-      _id: 1
       _userAssignable: 1
       _checkConflictsWithAllCategories: 1
       _checkConflictsCategoryIds: 
