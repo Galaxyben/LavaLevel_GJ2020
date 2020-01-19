@@ -67,7 +67,7 @@ public class PessStartToJoin : MonoBehaviour
         rewiredPlayer.controllers.maps.SetMapsEnabled(false, "Assignment");
 
         // Enable UI control for this Player now that he has joined
-        rewiredPlayer.controllers.maps.SetMapsEnabled(true, "Default");
+        rewiredPlayer.controllers.maps.SetMapsEnabled(true, "UI");
 
         Debug.Log("Added Rewired Player id " + rewiredPlayerId + " to game player " + gamePlayerId);
 
