@@ -33,6 +33,9 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         state = State.MAIN_MENU;
+
+        player.controllers.maps.SetMapsEnabled(false, "Default");
+        player.controllers.maps.SetMapsEnabled(true, "UI");
     }
 
     private void FixedUpdate()
@@ -55,8 +58,23 @@ public class CharacterSelection : MonoBehaviour
         pressedA = player.GetButtonDown("Select");
     }
 
+    public void ForcedChangeState()
+    {
+        state = State.CHARACTER_SELECTION;
+    }
+
+    public void Input_SwitchToPlay()
+    {
+        player.controllers.maps.SetMapsEnabled(false, "UI");
+        player.controllers.maps.SetMapsEnabled(true, "Default");
+    }
+
     private void ProcessInput()
     {
+        if (pressedA)
+        {
+            Debug.Log("Se presiono A");
+        }
         if (state == State.MAIN_MENU)
         {
             if (up)

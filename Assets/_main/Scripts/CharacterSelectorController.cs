@@ -13,11 +13,6 @@ public class CharacterSelectorController : MonoBehaviour
     {
         Init();
     }
-    
-    void Update()
-    {
-        
-    }
 
     public void Init()
     {
@@ -33,13 +28,13 @@ public class CharacterSelectorController : MonoBehaviour
     {
         if(!ready)
         {
-            characters[current].SetActive(true);
-            characters[current - 1].SetActive(false);
             current++;
-            if (current > characters.Length)
+            if (current >= characters.Length)
             {
                 current = 0;
             }
+            characters[current].SetActive(true);
+            characters[current == 0 ?  characters.Length - 1 : current - 1].SetActive(false);
         }
     }
 
@@ -47,13 +42,13 @@ public class CharacterSelectorController : MonoBehaviour
     {
         if(!ready)
         {
-            characters[current - 1].SetActive(true);
-            characters[current].SetActive(false);
             current--;
             if (current < 0)
             {
-                current = characters.Length;
+                current = characters.Length - 1;
             }
+            characters[current].SetActive(true);
+            characters[current == 3 ? 0 : current + 1].SetActive(false);
         }
     }
 
