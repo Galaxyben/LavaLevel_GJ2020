@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491305853}
-  m_LocalRotation: {x: 0.013500974, y: -0.000000014617248, z: -0.0000001938939, w: 0.9999089}
+  m_LocalRotation: {x: 0.013500974, y: 0.000000019859518, z: -0.00000019435942, w: 0.9999089}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -801,13 +801,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
+  scaler: {fileID: 0}
   stats:
     moveForce: 25
     breakForce: 25
     jumpForce: 16
     dashForce: 15
-    dashVelMod: 1
+    velConserveRatio: 0
     weightMod: 5
+    dashCooldown: 0
+  infiniteJumps: 0
+  infiniteDash: 0
+  floorNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &1147584347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +827,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerID: 0
   movement: {fileID: 6669228834555949427}
+  freeLook: {fileID: 0}
+  velocidadDeRotacion: 30
+  axis1:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 0
+    m_AccelTime: 0
+    m_DecelTime: 0
+    m_InputAxisName: 
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: 0
+    m_MaxValue: 0
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 0
+      m_RecenteringTime: 0
+      m_LegacyHeadingDefinition: 0
+      m_LegacyVelocityFilterStrength: 0
+  axis2:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 0
+    m_AccelTime: 0
+    m_DecelTime: 0
+    m_InputAxisName: 
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: 0
+    m_MaxValue: 0
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 0
+      m_RecenteringTime: 0
+      m_LegacyHeadingDefinition: 0
+      m_LegacyVelocityFilterStrength: 0
 --- !u!135 &1169444313
 SphereCollider:
   m_ObjectHideFlags: 0

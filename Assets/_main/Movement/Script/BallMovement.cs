@@ -80,7 +80,9 @@ public class BallMovement : MonoBehaviour
         }
     }
 
-    public virtual void Special(){}
+    public virtual void Special(){
+        Debug.Log("Special default");
+    }
 
     void EndDash()
     {
@@ -89,7 +91,6 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Col enter");
         if(isDashing)
         {
             Vector3 point = collision.contactCount > 0 ? collision.contacts[0].point : transform.position;
@@ -105,7 +106,6 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("Col stay");
         if (collision.contactCount > 0)
         {
             //Calculando el piso menos inclinado para tomar esa normal y utilizarla para el dash
@@ -143,7 +143,6 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        Debug.Log("Col exit");
         isGrounded = false;
         for (int i = 0; i < collision.contactCount; i++)
         {

@@ -31,6 +31,7 @@ public class StandardBallMovement : BallMovement
         {
             for(int i = 0; i < directions.Count; i++)
             {
+                Debug.Log("Special adding force in direction " + directions[i]);
                 rigi.AddForce(directions[i] * (bumperForce/directions.Count), ForceMode.Impulse);
             }
         }
@@ -42,8 +43,10 @@ public class StandardBallMovement : BallMovement
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Special bumper trigger enter");
         if (other.gameObject != gameObject)
         {
+            Debug.Log("Special trigger enter");
             Vector3 point = other.ClosestPoint(transform.position);
             Vector3 dir = (transform.position - point).normalized;
             directions.Add(dir);
