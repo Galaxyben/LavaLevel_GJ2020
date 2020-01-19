@@ -100,7 +100,8 @@ public class BallMovement : MonoBehaviour
             rigi.AddForce(Vector3.ProjectOnPlane(dashDir, isGrounded ? floorNormal : Vector3.up) * stats.dashForce, ForceMode.Impulse); //Vector de enfrente proyectado en un plano con normal (0,1,0))
             isDashing = true;
             lastDashTime = Time.time;
-            dash_ptr.Play();
+            GameObject prt = Instantiate(dash_ptr, transform.position, transform.rotation).gameObject;
+            Destroy(prt, 2.0f);
             Invoke("EndDash", 0.7f);
         }
     }
@@ -153,7 +154,7 @@ public class BallMovement : MonoBehaviour
             if (Vector3.Dot(Vector3.up, collision.contacts[i].normal) > 0.25f) //Si estoy tocando algo no muy inclinado
             { 
                 isGrounded = canJump = true;
-                land_ptr.Play();
+                GameObject prt = Instantiate(land_ptr, transform.position, Quaternion.identity).gameObject;
             }
         }
     }

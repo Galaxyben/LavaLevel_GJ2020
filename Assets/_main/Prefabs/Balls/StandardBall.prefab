@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  scaler: {fileID: 0}
+  scaler: {fileID: 467911238321654900}
   increaseSize: 0
   stats:
     moveForce: 10
@@ -914,8 +914,10 @@ MonoBehaviour:
   damaged_prt:
   - {fileID: 4732260713360450385}
   - {fileID: 1012642453651218686}
-  dash_ptr: {fileID: 4376984595354342258}
-  land_ptr: {fileID: 3239760560124832929}
+  dash_ptr: {fileID: 7355892982229663927, guid: 8965cada9b8dee4458edd2c67a512988,
+    type: 3}
+  land_ptr: {fileID: 5485141175789367883, guid: c71ff2e19acea53468dbe90ed499d50c,
+    type: 3}
   ripple_ptr: {fileID: 561965957008913760, guid: 2462791f535a0204fbce4412ba3f3990,
     type: 3}
   infiniteJumps: 0
@@ -1518,12 +1520,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6533401434172773317}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4376984595354342258 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7355892982229663927, guid: 8965cada9b8dee4458edd2c67a512988,
-    type: 3}
-  m_PrefabInstance: {fileID: 6533401434172773317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6983627019586412266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,12 +1594,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71ff2e19acea53468dbe90ed499d50c, type: 3}
---- !u!198 &3239760560124832929 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5485141175789367883, guid: c71ff2e19acea53468dbe90ed499d50c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6983627019586412266}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3239760560124832930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5485141175789367880, guid: c71ff2e19acea53468dbe90ed499d50c,
