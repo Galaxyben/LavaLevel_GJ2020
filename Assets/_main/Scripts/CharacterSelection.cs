@@ -7,8 +7,18 @@ using Rewired;
 
 public class CharacterSelection : MonoBehaviour
 {
-    Player player1;
+    public enum State
+    {
+        MAIN_MENU,
+        CHARACTER_SELECTION,
+        SELECTED
+    }
+
+    Player player;
+    public CharacterSelectorController csc;
+    public State state;
     public int playerID;
+
     public bool up;
     public bool down;
     public bool right;
@@ -17,40 +27,71 @@ public class CharacterSelection : MonoBehaviour
 
     private void Awake()
     {
-        player1 = ReInput.players.GetPlayer(playerID);
+        player = ReInput.players.GetPlayer(playerID);
     }
 
     void Start()
     {
-        
+        state = State.MAIN_MENU;
+    }
+
+    private void FixedUpdate()
+    {
+        GetInput();
     }
 
     void Update()
     {
-        GetInput();
+       // GetInput();
         ProcessInput();
     }
 
     private void GetInput()
     {
-        up = player1.GetButtonDown("Move_Vertical");
-        right = player1.GetButtonDown("Move_Horizontal");
-        down = player1.GetNegativeButtonDown("Move_Vertical");
-        left = player1.GetNegativeButtonDown("Move_Horizontal");
-        pressedA = player1.GetButtonDown("Select");
+        up = player.GetButtonDown("Move_Vertical");
+        right = player.GetButtonDown("Move_Horizontal");
+        down = player.GetNegativeButtonDown("Move_Vertical");
+        left = player.GetNegativeButtonDown("Move_Horizontal");
+        pressedA = player.GetButtonDown("Select");
     }
 
     private void ProcessInput()
     {
-        if (up)
-            Debug.Log("Se arriba");
-        if (right)
-            Debug.Log("Se redercha");
-        if (left)
-            Debug.Log("Se isierda");
-        if (down)
-            Debug.Log("Se bajo");
-        if (pressedA)
-            Debug.Log("Se selecciona");
+        if (state == State.MAIN_MENU)
+        {
+            if (up)
+            {
+
+            }
+            if (down)
+            {
+
+            }
+            if (pressedA)
+            {
+                state = State.CHARACTER_SELECTION;
+            }
+        }
+        else if( state == State.CHARACTER_SELECTION)
+        {
+            if (right)
+            {
+                csc.NextCharacter();
+            }
+            if (left)
+            {
+                csc.LastCharacter();
+            }
+            if (pressedA)
+            {
+                csc.playerID = playerID;
+                csc.SelectCharacter();
+
+                player.controllers.maps.SetMapsEnabled(false, "UI");
+                player.controllers.maps.SetMapsEnabled(true, "Default");
+
+                state = State.SELECTED;
+            }
+        }
     }
 }

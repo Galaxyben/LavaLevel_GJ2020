@@ -92,7 +92,7 @@ Material:
     - _StencilWriteMask: 255
     - _UVSec: 0
     - _ZWrite: 1
-    - _pannSpeedA: 3.79
+    - _pannSpeedA: -3.93
     - _pannSpeedB: 0
     - _pannSpeedC: 0
     m_Colors:
