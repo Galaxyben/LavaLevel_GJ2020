@@ -104,6 +104,22 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    public void Despawn()
+    { 
+        rigi.velocity = Vector3.zero;
+        rigi.isKinematic = true;
+        gameObject.SetActive(false);
+    }
+
+    public void Spawn(Vector3 pos)
+    {
+        Debug.Log("Spawning");
+        rigi.isKinematic = false;
+        transform.position = pos;
+        transform.rotation = Quaternion.identity;
+        gameObject.SetActive(true);
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.contactCount > 0)
