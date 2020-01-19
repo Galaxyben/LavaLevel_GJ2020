@@ -11,23 +11,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 262cd411b5aa21149b90de93ce058e70, type: 3}
   m_Name: MainList
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   clipGroup:
   - clips:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - clips: []
-  - clips: []
-  - clips: []
-  - clips: []
-  - clips: []
-  - clips: []
-  - clips: []
+    - {fileID: 8300000, guid: 4963416f68924024ca7a2e4102e70e49, type: 3}
+    - {fileID: 8300000, guid: 1e649fc1a4368b44a99590e36656f266, type: 3}
+    - {fileID: 8300000, guid: b86b0bdafae986143ae4c64986dc516d, type: 3}
+    - {fileID: 8300000, guid: 010d9f9bdc900f14eac29c46dea81b04, type: 3}
+  - clips:
+    - {fileID: 8300000, guid: e794693d0a35dd7479d92782ef89cdaa, type: 3}
+    - {fileID: 8300000, guid: 9471e55d2d5a018488fca45aaf5f1ef9, type: 3}
+    - {fileID: 8300000, guid: 235383c99238b7a4cb655e720e0c63c9, type: 3}
+  - clips:
+    - {fileID: 8300000, guid: 46e13b3a021c57041a5925068989416b, type: 3}
+    - {fileID: 8300000, guid: 3e76617115b907247ba3867c010839e0, type: 3}
+    - {fileID: 8300000, guid: 3533f5f5a897b0441ba289967072bc2a, type: 3}
+    - {fileID: 8300000, guid: 87a25dfe42fbfb842889562c974d8956, type: 3}
+  - clips:
+    - {fileID: 8300000, guid: 4ca3a4190b40658419b7549a2f4552b4, type: 3}
