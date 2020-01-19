@@ -9750,7 +9750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 7510272880200519726}
   scaler: {fileID: 7946464852132011837}
-  increaseSize: 0
+  increaseSize: 1
   stats:
     moveForce: 10
     breakForce: 20
@@ -24739,8 +24739,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7510272880200519727}
-  m_LocalRotation: {x: -0.28341523, y: -0.32499918, z: -0.10275775, w: 0.89637727}
-  m_LocalPosition: {x: 6.7805004, y: 3, z: -2.0836985}
+  m_LocalRotation: {x: -0.28047928, y: -0.31275165, z: -0.09722338, w: 0.9022557}
+  m_LocalPosition: {x: 9.610765, y: 3, z: -2.7628226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7510272879424628004}
@@ -25538,7 +25538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7946464852755041735}
-  m_LocalRotation: {x: 0.28047934, y: 0.3127516, z: 0.0972231, w: -0.90225583}
+  m_LocalRotation: {x: 0.28047934, y: 0.31275156, z: 0.097223096, w: -0.90225583}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
