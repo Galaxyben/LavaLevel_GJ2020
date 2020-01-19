@@ -9,10 +9,7 @@ public class HeavyBallHammer : MonoBehaviour
 
     private void OnCollisionEnter(Collision _col)
     {
-        PushData pushData;
-        pushData.direction = _col.contacts[0].normal;
-        pushData.force = force;
-        pushData.point = _col.contacts[0].point;
-        _col.gameObject.SendMessage("GetPushed", pushData);
+        PushData pushData = new PushData(_col.contacts[0].point, _col.contacts[0].normal, force);
+        _col.gameObject.SendMessage("GetPushed", pushData, SendMessageOptions.DontRequireReceiver);
     }
 }

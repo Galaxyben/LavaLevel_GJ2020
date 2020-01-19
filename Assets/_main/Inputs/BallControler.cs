@@ -47,6 +47,8 @@ public class BallControler : MonoBehaviour
         jump = player.GetButtonDown("Jump");
         dash = player.GetButtonDown("Dash");
         special = player.GetButtonDown("Special");
+        if (special)
+            Debug.Log("Special was down");
     }
 
     private void ProcessInput()
