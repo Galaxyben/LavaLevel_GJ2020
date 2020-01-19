@@ -17,6 +17,8 @@ MonoBehaviour:
   - Custom
   - Example
   - General
+  - MainMenu
   Categories:
   - {fileID: 11400000, guid: b01e98f4801f7124ba39e1dac4debf90, type: 2}
   - {fileID: 11400000, guid: eb6ccb47d8e369a48ae1d8cc7ef24da8, type: 2}
+  - {fileID: 11400000, guid: 66db868ea5b9e3b4893b18ebf630e47c, type: 2}
