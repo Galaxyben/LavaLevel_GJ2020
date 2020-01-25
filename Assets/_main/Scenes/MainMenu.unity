@@ -14629,7 +14629,6 @@ GameObject:
   - component: {fileID: 1415207075}
   - component: {fileID: 1415207074}
   - component: {fileID: 1415207076}
-  - component: {fileID: 1415207080}
   m_Layer: 0
   m_Name: View - CharacterSelection
   m_TagString: Untagged
@@ -15191,33 +15190,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1415207080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415207072}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e29a7c306e3954c9fa791470f4023f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterPrefab:
-  - {fileID: 2851313302694001389, guid: 70b6532079312294ca99f4df138399bc, type: 3}
-  - {fileID: 7510272879424628005, guid: bc1b2c75724ee424db23b677d767837d, type: 3}
-  - {fileID: 8936625089952582000, guid: 68e7fde4009f7914c96bdd86b0ee8162, type: 3}
-  - {fileID: 4636890970763216040, guid: ecca2a68b7e4ad048b5a56a1e7833da4, type: 3}
-  selectedLevel: 0
-  cameraMasks:
-  - serializedVersion: 2
-    m_Bits: 1847
-  - serializedVersion: 2
-    m_Bits: 3639
-  - serializedVersion: 2
-    m_Bits: 5687
-  - serializedVersion: 2
-    m_Bits: 9783
 --- !u!1 &1419833424
 GameObject:
   m_ObjectHideFlags: 0

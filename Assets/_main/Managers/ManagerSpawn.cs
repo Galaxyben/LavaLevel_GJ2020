@@ -35,7 +35,7 @@ public class ManagerSpawn : MonoBehaviour
             Destroy(canvas);
         }
 
-        /*if (CharacterManager.instance)
+        if (CharacterManager.instance)
         {
             theMasks = CharacterManager.instance.cameraMasks;
             SpawnCharacters(CharacterManager.instance.selectedCharacters, CharacterManager.instance.characterPrefab);
@@ -57,22 +57,7 @@ public class ManagerSpawn : MonoBehaviour
             prefab.Add(mockupPrefab);
             theMasks = mockupMasks;
             SpawnCharacters(d, prefab);
-        }*/
-        var temp = GetComponent<PessStartToJoin>();
-        if (temp) temp.enabled = true;
-
-        List<CharacterSelectionData> d = new List<CharacterSelectionData>();
-        d.Add(new CharacterSelectionData(0, 0));
-        d.Add(new CharacterSelectionData(1, 1));
-        d.Add(new CharacterSelectionData(2, 2));
-        d.Add(new CharacterSelectionData(3, 3));
-        List<GameObject> prefab = new List<GameObject>();
-        prefab.Add(mockupPrefab);
-        prefab.Add(mockupPrefab);
-        prefab.Add(mockupPrefab);
-        prefab.Add(mockupPrefab);
-        theMasks = mockupMasks;
-        SpawnCharacters(d, prefab);
+        }
     }
 
     public void SpawnCharacters(List<CharacterSelectionData> selectionData, List<GameObject> prefabs)

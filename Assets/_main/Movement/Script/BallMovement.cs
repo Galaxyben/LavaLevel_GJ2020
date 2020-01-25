@@ -130,6 +130,7 @@ public class BallMovement : MonoBehaviour
         transform.position = pos;
         transform.rotation = Quaternion.identity;
         gameObject.SetActive(true);
+        scaler.ResetScale();
     }
 
     public void SetDamaged(bool _bool)

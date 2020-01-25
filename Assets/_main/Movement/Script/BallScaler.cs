@@ -12,9 +12,12 @@ public class BallScaler : MonoBehaviour
     float maxScale = 5;
     float maxMass = 3;
 
+    Vector3 initialScale;
+
     void Start()
     {
         rigi = GetComponent<Rigidbody>();
+        initialScale = transform.localScale;
     }
      
     public void GetHit(float _dmg)
@@ -23,5 +26,10 @@ public class BallScaler : MonoBehaviour
         totalDamage = Mathf.Min(maxDamage, totalDamage);
         transform.localScale = Vector3.ClampMagnitude(transform.localScale + Vector3.one * 0.6f, 8);
         rigi.mass = Mathf.Min(maxMass, rigi.mass + 0.1f); ///Calar el crecimiento por tiempo
+    }
+
+    public void ResetScale()
+    {
+        transform.localScale = initialScale;
     }
 }
